@@ -8,5 +8,8 @@
   },
   "keywords": ["git", "branches", "naming"],
   "author": "Jose Luis Piedrahita",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^1.11.1"
+  }
 }
