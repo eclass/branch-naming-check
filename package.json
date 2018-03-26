@@ -1,0 +1,12 @@
+{
+  "name": "@innocells/branch-naming-check",
+  "version": "0.9.0",
+  "description": "Enforce naming conventions on git branches",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": ["git", "branches", "naming"],
+  "author": "Jose Luis Piedrahita",
+  "license": "ISC"
+}
