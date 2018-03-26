@@ -6,11 +6,10 @@
   "scripts": {
     "test": "jest"
   },
-  "keywords": [
-    "git",
-    "branches",
-    "naming"
-  ],
+  "bin": {
+    "branch-naming-check": "./index.js"
+  },
+  "keywords": ["git", "branches", "naming"],
   "author": "Jose Luis Piedrahita",
   "license": "ISC",
   "devDependencies": {
