@@ -2,6 +2,12 @@
 
 const { currentBranchName } = require("./lib/git-utils");
 
+if (!process.argv[2]) {
+  console.error("Usage: branch-naming-check <regexp>");
+  process.exitCode = 1;
+  return;
+}
+
 currentBranchName().then(branchName => {
   let validBranchNameRegExp;
   try {
