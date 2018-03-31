@@ -3,15 +3,23 @@
 const { currentBranchName } = require("./lib/git-utils");
 
 currentBranchName().then(branchName => {
-  const matchesPattern = /(feature|release|hotfix)\/\d+\/(NOMO-\d+_)?[a-z-]+/g.test(
-    branchName
-  );
-  if (matchesPattern) {
+  let validBranchNameRegExp;
+  try {
+    validBranchNameRegExp = new RegExp(process.argv[2], "g");
+  } catch (error) {
+    console.error(error.message + "\n");
+    process.exitCode = 1;
+    return;
+  }
+
+  if (validBranchNameRegExp.test(branchName)) {
     process.exitCode = 0;
   } else {
     process.exitCode = 1;
     console.error(
-      `Current branch "${branchName}" doesn't match supplied name pattern\n`
+      `Current Git branch name: "${branchName}" \n` +
+        `Doesn't match supplied RegExp: "${validBranchNameRegExp.toString()}"\n\n` +
+        `YOU HAVE BEEN REPORTED TO THE AUTHORITIES\n`
     );
   }
 });

@@ -9,7 +9,11 @@
   "bin": {
     "branch-naming-check": "./index.js"
   },
-  "keywords": ["git", "branches", "naming"],
+  "keywords": [
+    "git",
+    "branches",
+    "naming"
+  ],
   "author": "Jose Luis Piedrahita",
   "license": "ISC",
   "devDependencies": {
